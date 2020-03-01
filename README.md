@@ -1,5 +1,7 @@
 # create-noodle-app
-A CLI tool for creating template node projects
+A CLI tool for creating template node projects.
+
+The noodle-ness is unimportant. A random name generator gave me the NPM username [`noodles-please-me`](https://www.npmjs.com/~noodles-please-me), so now everything on NPM is noodle themed.
 
 ## Usage
 Currently the package needs to be pulled and run locally:
