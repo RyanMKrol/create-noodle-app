@@ -1,6 +1,6 @@
 {
   "name": "create-noodle-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "build/index.js",
   "scripts": {
     "start": "npm run-script build && ts-node build/index.js",
