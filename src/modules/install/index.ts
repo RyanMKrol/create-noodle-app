@@ -1,0 +1,1 @@
+export { installProject } from './install'
