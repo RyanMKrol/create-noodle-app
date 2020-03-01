@@ -1,0 +1,1 @@
+export { currentDirectory } from './currentDirectory'
