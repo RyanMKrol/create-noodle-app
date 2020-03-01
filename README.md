@@ -23,3 +23,12 @@ I then have to replace every piece of boilerplate code in areas like:
 * the deployment scripts
 
 This CLI tool will do these tasks for me, speeding up the spin-up time for creating a new Node project!
+
+## Sources
+This article provided a lot of boilerplate code:
+* https://medium.com/@pongsatt/how-to-build-your-own-project-templates-using-node-cli-c976d3109129
+
+A lot of the work I did in this project was cleaning the entire thing up, using proper patterns, and optimising the workflow.
+
+You can find the article's source code here:
+* https://github.com/pongsatt/mycli
