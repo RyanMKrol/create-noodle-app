@@ -1,3 +1,6 @@
+import chalk from 'chalk'
+import { CliOptions } from './'
+
 export function messageDone(options: CliOptions) {
   console.log('')
   console.log(chalk.green('Done.'))
