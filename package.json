@@ -7,7 +7,7 @@
     "build": "tsc && shx rm -rf build/templates && shx cp -r templates build"
   },
   "bin": {
-    "mycli": "./build/index.js"
+    "create-noodle-app": "./build/index.js"
   },
   "license": "MIT",
   "devDependencies": {
