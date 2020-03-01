@@ -2,7 +2,7 @@ import * as fs from 'fs'
 import * as path from 'path'
 import * as yargs from 'yargs'
 
-const CHOICES = fs.readdirSync(path.join(__dirname, 'templates'))
+const CHOICES = fs.readdirSync(path.join(__dirname, './../templates'))
 
 const QUESTIONS = [
   {
