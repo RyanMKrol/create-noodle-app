@@ -21,11 +21,18 @@ const QUESTIONS = [
   {
     name: 'name',
     type: 'input',
-    message: 'Project name:',
+    message: 'Project name (required):',
     when: () => !yargs.argv['name'],
     validate: (input: string) => {
-      if (/^([A-Za-z\-\_\d])+$/.test(input)) return true
-      else return 'Project name may only include letters, numbers, underscores and hashes.'
+      if (input.length === 0) {
+        return 'Must provide a project name!'
+      }
+
+      if (!(/^([A-Za-z\-\_\d])+$/.test(input))) {
+        return 'Project name may only include letters, numbers, underscores and hashes.'
+      }
+
+      return true
     }
   }
 ]
