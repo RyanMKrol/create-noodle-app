@@ -1,18 +1,25 @@
 import * as fs from 'fs'
 import * as path from 'path'
-import { currentDirectory } from './../process'
 
-export function createProjecFiles(projectPath: string, sourcePath: string, projectName: string) {
-  createDirectory(projectPath)
-  createDirectoryContents(sourcePath, projectName)
+import { currentDirectory } from './../utils'
+import { ProjectBuildRequest } from './../types'
+import { messageFilesCreated } from './../messages'
+
+export function createProjectFiles(request: ProjectBuildRequest) {
+  createDirectory(request.targetPath)
+  createDirectoryContents(request.sourcePath, request.projectName)
+
+  messageFilesCreated()
+
+  return request
 }
 
-function createDirectory(projectPath) {
-  if (fs.existsSync(projectPath)) {
-    throw Error(`Folder ${projectPath} exists. Delete or use another name.`)
+function createDirectory(targetPath: string) {
+  if (fs.existsSync(targetPath)) {
+    throw Error(`Folder ${targetPath} exists. Delete or use another name.`)
   }
 
-  fs.mkdirSync(projectPath)
+  fs.mkdirSync(targetPath)
 }
 
 function createDirectoryContents(sourcePath: string, projectName: string) {
@@ -36,8 +43,4 @@ function createDirectoryContents(sourcePath: string, projectName: string) {
       createDirectoryContents(path.join(sourcePath, file), path.join(projectName, file))
     }
   })
-}
-
-export {
-  createProjecFiles,
 }
