@@ -1,0 +1,1 @@
+export { replaceTemplateVariables } from './replaceTemplateVariables'
