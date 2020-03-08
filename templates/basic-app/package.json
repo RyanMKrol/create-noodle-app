@@ -1,13 +1,13 @@
 {
   "name": "<%= projectName %>",
   "version": "1.0.0",
+  "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run-script lint && tsc",
     "lint": "eslint . --ext .ts,.tsx",
     "start": "npm run-script build && ts-node build/app.js"
   },
-  "license": "MIT",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.22.0",
     "@typescript-eslint/parser": "^2.22.0",

@@ -1,6 +1,7 @@
 {
   "name": "create-noodle-app",
-  "version": "1.0.1",
+  "version": "1.0.2",
+  "license": "MIT",
   "main": "build/index.js",
   "scripts": {
     "start": "npm run-script build && ts-node build/index.js",
@@ -9,7 +10,6 @@
   "bin": {
     "create-noodle-app": "./build/index.js"
   },
-  "license": "MIT",
   "devDependencies": {
     "@types/ejs": "3.0.1",
     "@types/inquirer": "0.0.44",
