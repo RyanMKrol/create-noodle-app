@@ -60,5 +60,9 @@ function convertSpecialFilenames(filename: string): string {
     return 'package.json'
   }
 
+  if (filename === 'gitignore.txt') {
+    return '.gitignore'
+  }
+
   return filename
 }
