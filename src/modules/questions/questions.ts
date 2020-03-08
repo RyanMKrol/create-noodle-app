@@ -32,19 +32,8 @@ const QUESTIONS = [
   {
     name: 'repo',
     type: 'input',
-    message: 'Git Repo (required):',
+    message: 'Git Repo (leave blank for same name as project):',
     when: () => !yargs.argv['repo'],
-    validate: (input: string) => {
-      if (input.length === 0) {
-        return 'Must provide a git repo name!'
-      }
-
-      if (!(/^([A-Za-z\-\_\d])+$/.test(input))) {
-        return 'Git repo name may only include letters, numbers, underscores and hashes.'
-      }
-
-      return true
-    }
   }
 ]
 

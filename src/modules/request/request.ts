@@ -9,7 +9,7 @@ export function setupProjectBuildRequestObject(answers: any): ProjectBuildReques
 
   const projectChoice = completeAnswers['template']
   const projectName = completeAnswers['name']
-  const repoName = completeAnswers['repo']
+  const repoName = completeAnswers['repo'] || completeAnswers['name']
 
   return {
     projectName: projectName,
