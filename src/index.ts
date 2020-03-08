@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import * as inquirer from 'inquirer'
-import chalk from 'chalk'
+import * as chalk from 'chalk'
 
 import { QUESTIONS } from './modules/questions'
 import { createProjectFiles } from './modules/files'
