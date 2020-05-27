@@ -1,0 +1,10 @@
+cd ~
+rm -rf <%= repoName %>
+git clone https://github.com/RyanMKrol/<%= repoName %>.git
+cd <%= repoName %>
+git pull
+npm install
+npm run build
+pm2 delete <%= repoName %>
+pm2 start runSite.js --name <%= repoName %>
+pm2 save
