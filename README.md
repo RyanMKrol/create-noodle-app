@@ -35,3 +35,12 @@ A lot of the work I did in this project was cleaning the entire thing up, using 
 You can find the article's source code here:
 
 - https://github.com/pongsatt/mycli
+
+## Notes
+
+When creating a new template, you have to format certain files differently to how you might expect:
+
+- package.json files must be package.txt
+  - This is because the npm build process will pick up on any package.json file in the tree, so this is a quick way to solve this problem.
+- .gitignore files must be gitignore.txt
+  - Similar story to the above, but with git; git will pick up on any .gitignore file, so these need to be changed slightly to avoid this.
