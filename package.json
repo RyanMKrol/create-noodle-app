@@ -23,8 +23,14 @@
   "dependencies": {
     "chalk": "^3.0.0",
     "ejs": "3.0.1",
+    "husky": "^4.2.5",
     "inquirer": "6.2.0",
     "shelljs": "0.8.3",
     "yargs": "15.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build"
+    }
   }
 }
