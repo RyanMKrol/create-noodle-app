@@ -5,15 +5,24 @@ import { messageProjectInstalled } from './../messages'
 export function installProject(request: ProjectBuildRequest) {
   shell.cd(request.targetPath)
 
-  const command = 'npm install'
-
   if (!shell.which('npm')) {
     throw new Error('No npm found. Cannot run installation!')
+  } else if (!shell.which('git')) {
+    throw new Error('No git found. Cannot run installation!')
   } else {
-    const result = shell.exec(command)
+    const gitInitCommand = 'git init'
+    const npmInstallCommand = 'npm install'
 
-    if (result.code !== 0) {
-      throw new Error('Installation failed!')
+    const gitResult = shell.exec(gitInitCommand)
+
+    if (gitResult.code !== 0) {
+      throw new Error('Installation failed because of git!')
+    }
+
+    const npmResult = shell.exec(npmInstallCommand)
+
+    if (npmResult.code !== 0) {
+      throw new Error('Installation failed because of npm!')
     }
   }
 
