@@ -20,6 +20,14 @@ module.exports = {
         '@typescript-eslint'
     ],
     'rules': {
+        'rules': {
+            'no-use-before-define': [
+                'error',
+                {
+                    'functions': false
+                }
+            ],
+        },
         'no-unused-vars': 'off',
         'indent': [
             'error',
