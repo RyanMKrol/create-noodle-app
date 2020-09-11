@@ -12,8 +12,10 @@ let server = null;
 
 /**
  * Normalize a port into a number, string, or false.
+ *
+ * @param {number} val - the port
+ * @returns {number|boolean} Either the port number, or false
  */
-
 function normalizePort(val) {
   const normalisedPort = parseInt(val, 10);
 
@@ -32,8 +34,10 @@ function normalizePort(val) {
 
 /**
  * Event listener for HTTP server 'error' event.
+ *
+ * @param {Error} error - the error
+ * @returns {void} Nothing
  */
-
 function onError(error) {
   if (error.syscall !== 'listen') {
     throw error;
@@ -59,7 +63,6 @@ function onError(error) {
 /**
  * Event listener for HTTP server 'listening' event.
  */
-
 function onListening() {
   const addr = server.address();
   const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`;
