@@ -1,29 +1,23 @@
 {
   "name": "create-noodle-app",
   "version": "1.0.22",
-  "license": "MIT",
-  "main": "build/index.js",
-  "scripts": {
-    "start": "npm run-script build && ts-node build/index.js",
-    "build": "tsc && shx rm -rf build/templates && shx cp -r templates build"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/RyanMKrol/create-noodle-app.git"
   },
+  "license": "MIT",
+  "main": "build/index.js",
   "bin": {
     "create-noodle-app": "./build/index.js"
   },
-  "devDependencies": {
-    "husky": "^4.2.5",
-    "@types/ejs": "3.0.1",
-    "@types/inquirer": "0.0.44",
-    "@types/node": "13.7.7",
-    "@types/shelljs": "0.8.6",
-    "@types/yargs": "15.0.4",
-    "shx": "0.3.2",
-    "ts-node": "7.0.1",
-    "typescript": "3.0.3"
+  "scripts": {
+    "build": "tsc && shx rm -rf build/templates && shx cp -r templates build",
+    "start": "npm run-script build && ts-node build/index.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "./scripts/husky.sh"
+    }
   },
   "dependencies": {
     "chalk": "^3.0.0",
@@ -32,9 +26,16 @@
     "shelljs": "0.8.3",
     "yargs": "15.0.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run build"
-    }
+  "devDependencies": {
+    "@types/ejs": "3.0.1",
+    "@types/inquirer": "0.0.44",
+    "@types/node": "13.7.7",
+    "@types/shelljs": "0.8.6",
+    "@types/yargs": "15.0.4",
+    "husky": "^4.2.5",
+    "shx": "0.3.2",
+    "sort-package-json": "^1.44.0",
+    "ts-node": "7.0.1",
+    "typescript": "3.0.3"
   }
 }
