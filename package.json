@@ -7,6 +7,10 @@
     "start": "npm run-script build && ts-node build/index.js",
     "build": "tsc && shx rm -rf build/templates && shx cp -r templates build"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RyanMKrol/create-noodle-app.git"
+  },
   "bin": {
     "create-noodle-app": "./build/index.js"
   },
