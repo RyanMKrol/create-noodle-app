@@ -54,36 +54,13 @@ function createDirectoryContents(
         templateData
       )
 
-      let isReadable = 1
-      let isWriteable = 1
-      let isExecutable = 1
-
-      // Check if the file is readable.
-      fs.access(sourceFilePath, fs.constants.R_OK, err => {
-        isReadable = 0
-      })
-
-      // Check if the file is writable.
-      fs.access(sourceFilePath, fs.constants.W_OK, err => {
-        isWriteable = 0
-      })
-
-      // Check if the file is executable.
-      fs.access(sourceFilePath, fs.constants.X_OK, err => {
-        isExecutable = 0
-      })
-
-      const binaryUserPermissionsValue = `${isReadable}${isWriteable}${isExecutable}`
-      const decimalUserPermissionsValue = Number.parseInt(
-        binaryUserPermissionsValue,
-        2
-      )
-
       fs.writeFileSync(targetFilePath, targetContents, 'utf8')
+
+      const userPermissions = getUserFilePermissions(sourceFilePath)
 
       fs.chmod(
         targetFilePath,
-        `${decimalUserPermissionsValue}${DEFAULT_GROUP_PERMISSIONS}${DEFAULT_OTHER_PERMISSIONS}`,
+        `${userPermissions}${DEFAULT_GROUP_PERMISSIONS}${DEFAULT_OTHER_PERMISSIONS}`,
         error => {
           if (error) {
             console.log(
@@ -103,6 +80,30 @@ function createDirectoryContents(
       )
     }
   })
+}
+
+function getUserFilePermissions(fileName: string) {
+  let isReadable = 1
+  let isWriteable = 1
+  let isExecutable = 1
+
+  // Check if the file is readable.
+  fs.access(fileName, fs.constants.R_OK, err => {
+    isReadable = 0
+  })
+
+  // Check if the file is writable.
+  fs.access(fileName, fs.constants.W_OK, err => {
+    isWriteable = 0
+  })
+
+  // Check if the file is executable.
+  fs.access(fileName, fs.constants.X_OK, err => {
+    isExecutable = 0
+  })
+
+  const binaryUserPermissionsValue = `${isReadable}${isWriteable}${isExecutable}`
+  return Number.parseInt(binaryUserPermissionsValue, 2)
 }
 
 function convertSpecialFilenames(filename: string): string {
