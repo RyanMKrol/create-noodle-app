@@ -24,7 +24,7 @@ I then have to replace every piece of boilerplate code in areas like:
 
 This CLI tool will do these tasks for me, speeding up the spin-up time for creating a new Node project!
 
-**More importantly this will also help me codify the lessons I've learned, allowing me to benefit from my learnings automatically in future projects.**
+Most importantly this will also help me codify the lessons I've learned, allowing me to benefit from my learnings automatically in future projects.
 
 ## Sources
 
