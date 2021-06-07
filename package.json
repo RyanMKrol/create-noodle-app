@@ -23,8 +23,8 @@
     "chalk": "^3.0.0",
     "ejs": "3.0.1",
     "inquirer": "6.2.0",
-    "shelljs": "0.8.3",
-    "yargs": "15.0.0"
+    "shelljs": "0.8.4",
+    "yargs": "17.0.1"
   },
   "devDependencies": {
     "@types/ejs": "3.0.1",
@@ -33,7 +33,7 @@
     "@types/shelljs": "0.8.6",
     "@types/yargs": "15.0.4",
     "husky": "^4.2.5",
-    "shx": "0.3.2",
+    "shx": "0.3.3",
     "sort-package-json": "^1.44.0",
     "ts-node": "7.0.1",
     "typescript": "3.0.3"
