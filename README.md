@@ -1,3 +1,7 @@
+# Deprecated
+
+This was a fun project that helped me templatise a handful of project types that I frequently created. The "best practices" and dependencies used in this project are no longer up-to-date however, and I'm not creating enough new projects to justify the upkeep. Fun while it lasted though!
+
 # create-noodle-app
 
 A CLI tool to help me setup new projects using project templates.
@@ -13,8 +17,8 @@ The noodle-ness is unimportant. A random name generator gave me the NPM username
 
 Currently, every time I make a new node project, I have to go to one of the following two packages, and clone them manually:
 
-- https://github.com/RyanMKrol/BaseNodeApiProject
-- https://github.com/RyanMKrol/BaseNodeReactProject
+- <https://github.com/RyanMKrol/BaseNodeApiProject>
+- <https://github.com/RyanMKrol/BaseNodeReactProject>
 
 I then have to replace every piece of boilerplate code in areas like:
 
@@ -30,13 +34,13 @@ Most importantly this will also help me codify the lessons I've learned, allowin
 
 This article provided a lot of boilerplate code:
 
-- https://medium.com/@pongsatt/how-to-build-your-own-project-templates-using-node-cli-c976d3109129
+- <https://medium.com/@pongsatt/how-to-build-your-own-project-templates-using-node-cli-c976d3109129>
 
 A lot of the work I did in this project was cleaning the entire thing up, using proper patterns, and optimising the workflow.
 
 You can find the article's source code here:
 
-- https://github.com/pongsatt/mycli
+- <https://github.com/pongsatt/mycli>
 
 ## Notes
 
